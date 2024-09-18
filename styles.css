@@ -1,0 +1,48 @@
+body {
+    background-color:cornflowerblue
+}
+
+header {
+    background-color:azure;
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px; 
+}
+
+.container {
+    display: flex;
+    display: grid;
+    gap: 20px;
+    padding: 20px;
+}
+
+.section {
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 20px;
+    background-color: azure;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#section-one {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+#section-two {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#section-three {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+#section-four {
+    grid-column: 2;
+    grid-row: 2;
+}
+
