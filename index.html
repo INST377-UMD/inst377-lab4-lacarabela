@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="styles.css">
+        <title>INST377 - Lab 4</title>
+    </head>
+
+    <body>
+        <!-- Header Section -->
+        <header>
+            <h1>INST377 - Lab 4</h1>
+        </header>
+
+        <!-- Body Section -->
+        <div class="container">
+            <!-- Section 1 -->
+            <div id="section-one" class="section">
+                <form name="alertForm" onsubmit="return(alertName())">
+                    <label>Name:</label>
+                    <input type="text" id="name" required>
+                    <input type="submit" value="Alert Me">
+                </form>
+
+                <script type="text/javascript">
+                    function alertName() {
+                            alert("Hi " + document.getElementById('name').value + "!");
+                    }
+                </script>
+            </div>
+            <!-- Section 2 -->
+            <div id="section-two" class="section">
+                <form name="textValidation" onsubmit="return(validateText())">
+                    <label>Text Tester:</label>
+                    <input type="text" id="text">
+                    <input type="submit" value="Validate Text">
+                </form>
+
+                <script type="text/javascript">
+                    function validateText() {
+                        var validation = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+                        if (validation.test(document.getElementById('text').value)) {
+                            alert("Special Character Detected!");
+                        }
+                    }
+                </script>
+            </div>
+            <!-- Section 3 -->
+            <div id="section-three" class="section">
+                <form name="colorForm" onsubmit="return changeColor(event)">
+                    <input type="submit" id="colorPicker" value="Change Color">
+                </form>
+                <script type="text/javascript">
+                    function changeColor(event) {
+                        event.preventDefault();
+                        if (document.body.style.backgroundColor === "forestgreen") {
+                            document.body.style.backgroundColor = "cornflowerblue";
+                        } else {
+                            document.body.style.backgroundColor = "forestgreen";
+                        }
+                    }
+                </script>
+            </div>
+            <!-- Section 4 -->
+            <div id="section-four" class="section">
+                <form onsubmit="return addText(event)">
+                    <input type="submit" value="Add Text">
+                </form>
+                <script type="text/javascript">
+                    function addText(event) {
+                        event.preventDefault();
+                        var header = document.querySelector('h1');
+                        header.textContent += " - Add Text";
+                    }
+                </script>
+            </div>
+        </div>
+    </body>
+</html>
